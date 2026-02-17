@@ -2,11 +2,12 @@ import React from 'react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { SpacesSection } from './components/SpacesSection';
-import { EventTypes } from './components/EventTypes';
+import { Events } from './components/Events';
 import { Equipment } from './components/Equipment';
-import { Gallery } from './components/Gallery';
-import { Testimonials } from './components/Testimonials';
-import { Contact } from './components/Contact';
+import { FoodDrinks } from './components/FoodDrinks';
+import { Pricing } from './components/Pricing';
+import { QuoteForm } from './components/QuoteForm';
+import { InfoCards } from './components/InfoCards';
 import { Footer } from './components/Footer';
 
 function App() {
@@ -15,11 +16,12 @@ function App() {
       <Navigation />
       <Hero />
       <SpacesSection />
-      <EventTypes />
+      <Events />
       <Equipment />
-      <Gallery />
-      <Testimonials />
-      <Contact />
+      <FoodDrinks />
+      <Pricing />
+      <QuoteForm />
+      <InfoCards />
       <Footer />
     </div>
   );
