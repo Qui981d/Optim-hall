@@ -3,33 +3,10 @@ import { Send, CheckCircle } from 'lucide-react';
 
 export function QuoteForm() {
     const [formData, setFormData] = useState({
-        // Event details
         eventType: '',
-        space: '',
-        dateStart: '',
-        dateEnd: '',
         participants: '',
-        // Technical needs
-        sound: false,
-        lighting: false,
-        video: false,
-        projector: false,
-        dj: false,
-        // Furniture
-        tables: false,
-        chairs: false,
-        stage: false,
-        standUp: false,
-        lectern: false,
-        cloakroom: false,
-        wifi: false,
-        // Options
-        security: false,
-        cleaning: false,
-        waste: false,
-        wc: false,
-        catering: false,
-        bar: false,
+        eventDate: '',
+        schedule: '',
         // Contact
         firstName: '',
         lastName: '',
@@ -60,7 +37,6 @@ export function QuoteForm() {
     const validate = () => {
         const newErrors: Record<string, string> = {};
         if (!formData.eventType) newErrors.eventType = 'Requis';
-        if (!formData.dateStart) newErrors.dateStart = 'Requis';
         if (!formData.participants) newErrors.participants = 'Requis';
         if (!formData.firstName) newErrors.firstName = 'Requis';
         if (!formData.lastName) newErrors.lastName = 'Requis';
@@ -102,27 +78,6 @@ export function QuoteForm() {
         );
     }
 
-    const CheckboxGroup = ({ title, items }: { title: string, items: { name: string, label: string }[] }) => (
-        <div>
-            <h4 className="text-sm font-semibold text-white/90 mb-3">{title}</h4>
-            <div className="grid grid-cols-2 gap-2">
-                {items.map(item => (
-                    <label key={item.name} className="flex items-center gap-2 cursor-pointer">
-                        <input
-                            type="checkbox"
-                            name={item.name}
-                            checked={formData[item.name as keyof typeof formData] as boolean}
-                            onChange={handleChange}
-                            className="rounded border-white/30 bg-white/10 text-optimhall-blue focus:ring-white"
-                            disabled={isSubmitting}
-                        />
-                        <span className="text-sm text-white/80">{item.label}</span>
-                    </label>
-                ))}
-            </div>
-        </div>
-    );
-
     return (
         <section id="demande" className="py-16 lg:py-24 bg-optimhall-blue font-gilroy">
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -131,7 +86,7 @@ export function QuoteForm() {
                         Recevez votre offre personnalisée
                     </h2>
                     <p className="text-white/70 text-lg">
-                        Sélectionnez vos besoins, on vous répond sous 24h
+                        Décrivez votre projet, on vous répond sous 24h
                     </p>
                 </div>
 
@@ -143,28 +98,28 @@ export function QuoteForm() {
                     <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 space-y-4">
                         <h3 className="text-lg font-bold text-white">Votre événement</h3>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label className="block text-sm text-white/80 mb-1">Type d'événement *</label>
-                                <select
-                                    name="eventType"
-                                    value={formData.eventType}
-                                    onChange={handleChange}
-                                    className={`w-full px-4 py-3 rounded-xl bg-white/10 border text-white placeholder-white/50 focus:ring-2 focus:ring-white focus:border-transparent ${errors.eventType ? 'border-red-400' : 'border-white/20'}`}
-                                    disabled={isSubmitting}
-                                >
-                                    <option value="" className="text-gray-900">Sélectionnez</option>
-                                    <option value="clubbing" className="text-gray-900">Clubbing</option>
-                                    <option value="corporate" className="text-gray-900">Corporate</option>
-                                    <option value="popup" className="text-gray-900">Pop-up Store</option>
-                                    <option value="expo" className="text-gray-900">Exposition</option>
-                                    <option value="mariage" className="text-gray-900">Mariage / Réception</option>
-                                    <option value="concert" className="text-gray-900">Concert / Spectacle</option>
-                                    <option value="sport" className="text-gray-900">Yoga / Danse / Sport</option>
-                                    <option value="autre" className="text-gray-900">Autre</option>
-                                </select>
-                            </div>
+                        <div>
+                            <label className="block text-sm text-white/80 mb-1">Type d'événement *</label>
+                            <select
+                                name="eventType"
+                                value={formData.eventType}
+                                onChange={handleChange}
+                                className={`w-full px-4 py-3 rounded-xl bg-white/10 border text-white focus:ring-2 focus:ring-white focus:border-transparent ${errors.eventType ? 'border-red-400' : 'border-white/20'}`}
+                                disabled={isSubmitting}
+                            >
+                                <option value="" className="text-gray-900">Sélectionnez</option>
+                                <option value="clubbing" className="text-gray-900">Clubbing</option>
+                                <option value="corporate" className="text-gray-900">Corporate</option>
+                                <option value="popup" className="text-gray-900">Pop-up Store</option>
+                                <option value="expo" className="text-gray-900">Exposition</option>
+                                <option value="mariage" className="text-gray-900">Mariage / Réception</option>
+                                <option value="concert" className="text-gray-900">Concert / Spectacle</option>
+                                <option value="sport" className="text-gray-900">Yoga / Danse / Sport</option>
+                                <option value="autre" className="text-gray-900">Autre</option>
+                            </select>
+                        </div>
 
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-sm text-white/80 mb-1">Nombre de personnes *</label>
                                 <input
@@ -177,91 +132,32 @@ export function QuoteForm() {
                                     disabled={isSubmitting}
                                 />
                             </div>
+                            <div>
+                                <label className="block text-sm text-white/80 mb-1">Date souhaitée</label>
+                                <input
+                                    type="text"
+                                    name="eventDate"
+                                    value={formData.eventDate}
+                                    onChange={handleChange}
+                                    placeholder="Ex: 15/03/2026"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:ring-2 focus:ring-white focus:border-transparent"
+                                    disabled={isSubmitting}
+                                />
+                            </div>
                         </div>
 
                         <div>
-                            <label className="block text-sm text-white/80 mb-1">Espace souhaité</label>
-                            <select
-                                name="space"
-                                value={formData.space}
+                            <label className="block text-sm text-white/80 mb-1">Horaires souhaités</label>
+                            <input
+                                type="text"
+                                name="schedule"
+                                value={formData.schedule}
                                 onChange={handleChange}
-                                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-white focus:border-transparent"
+                                placeholder="Ex: 18h - 02h"
+                                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:ring-2 focus:ring-white focus:border-transparent"
                                 disabled={isSubmitting}
-                            >
-                                <option value="" className="text-gray-900">Sélectionnez un espace</option>
-                                <option value="mainhall" className="text-gray-900">Mainhall — 400m²</option>
-                                <option value="studiohall" className="text-gray-900">Studiohall — 200m²</option>
-                                <option value="loges" className="text-gray-900">Loges Artistes</option>
-                                <option value="traiteur" className="text-gray-900">Office & Traiteur</option>
-                                <option value="autre" className="text-gray-900">Autre / Je ne sais pas encore</option>
-                            </select>
+                            />
                         </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-hidden">
-                            <div className="min-w-0">
-                                <label className="block text-sm text-white/80 mb-1">Date souhaitée *</label>
-                                <input
-                                    type="date"
-                                    name="dateStart"
-                                    value={formData.dateStart}
-                                    onChange={handleChange}
-                                    className={`w-full max-w-full px-4 py-3 rounded-xl bg-white/10 border text-white focus:ring-2 focus:ring-white focus:border-transparent ${errors.dateStart ? 'border-red-400' : 'border-white/20'}`}
-                                    disabled={isSubmitting}
-                                />
-                            </div>
-                            <div className="min-w-0">
-                                <label className="block text-sm text-white/80 mb-1">Date de fin (optionnel)</label>
-                                <input
-                                    type="date"
-                                    name="dateEnd"
-                                    value={formData.dateEnd}
-                                    onChange={handleChange}
-                                    className="w-full max-w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-white focus:border-transparent"
-                                    disabled={isSubmitting}
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Options Checkboxes */}
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 space-y-5">
-                        <h3 className="text-lg font-bold text-white">Besoins & options</h3>
-
-                        <CheckboxGroup
-                            title="Technique"
-                            items={[
-                                { name: 'sound', label: 'Sonorisation' },
-                                { name: 'lighting', label: 'Éclairage' },
-                                { name: 'video', label: 'Vidéo / Projection' },
-                                { name: 'projector', label: 'Vidéoprojecteur' },
-                                { name: 'dj', label: 'Espace DJ' },
-                            ]}
-                        />
-
-                        <CheckboxGroup
-                            title="Mobilier & Logistique"
-                            items={[
-                                { name: 'tables', label: 'Tables' },
-                                { name: 'chairs', label: 'Chaises' },
-                                { name: 'stage', label: 'Scène / Estrade' },
-                                { name: 'standUp', label: 'Mange-debout' },
-                                { name: 'lectern', label: 'Pupitre' },
-                                { name: 'cloakroom', label: 'Vestiaire' },
-                                { name: 'wifi', label: 'Wifi' },
-                            ]}
-                        />
-
-                        <CheckboxGroup
-                            title="Services"
-                            items={[
-                                { name: 'security', label: 'Sécurité' },
-                                { name: 'cleaning', label: 'Nettoyage' },
-                                { name: 'waste', label: 'Gestion déchets' },
-                                { name: 'wc', label: 'WC supplémentaires' },
-                                { name: 'catering', label: 'Espace traiteur' },
-                                { name: 'bar', label: 'Bar' },
-                            ]}
-                        />
                     </div>
 
                     {/* Contact Info */}

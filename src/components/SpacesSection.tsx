@@ -34,6 +34,14 @@ export function SpacesSection() {
       height: "",
       image: "https://images.pexels.com/photos/2788792/pexels-photo-2788792.jpeg?auto=compress&cs=tinysrgb&w=800",
       features: ["Cuisine équipée", "Stockage", "Zone de préparation"]
+    },
+    {
+      name: "Espace VIP",
+      capacity: "10 personnes",
+      area: "—",
+      height: "",
+      image: "https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ["Tables privées", "Canapés", "Service dédié"]
     }
   ];
 
@@ -50,7 +58,7 @@ export function SpacesSection() {
         </div>
 
         {/* Horizontal scroll on mobile, grid on desktop */}
-        <div className="flex lg:grid lg:grid-cols-4 gap-4 overflow-x-auto pb-4 -mx-4 px-4 lg:mx-0 lg:px-0 snap-x snap-mandatory scrollbar-hide">
+        <div className="flex lg:grid lg:grid-cols-5 gap-4 overflow-x-auto pb-4 -mx-4 px-4 lg:mx-0 lg:px-0 snap-x snap-mandatory scrollbar-hide">
           {spaces.map((space, index) => (
             <div
               key={index}

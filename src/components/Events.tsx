@@ -11,8 +11,8 @@ export function Events() {
             image: "https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
         {
-            type: "Yoga",
-            image: "https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600"
+            type: "Salon",
+            image: "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
         {
             type: "Cours de danse",
