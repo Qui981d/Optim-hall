@@ -34,3 +34,11 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Fix iOS Safari date input overflow */
+input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  max-width: 100%;
+  box-sizing: border-box;
+}

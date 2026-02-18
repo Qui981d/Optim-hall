@@ -197,26 +197,26 @@ export function QuoteForm() {
                             </select>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-hidden">
+                            <div className="min-w-0">
                                 <label className="block text-sm text-white/80 mb-1">Date souhaitée *</label>
                                 <input
                                     type="date"
                                     name="dateStart"
                                     value={formData.dateStart}
                                     onChange={handleChange}
-                                    className={`w-full px-4 py-3 rounded-xl bg-white/10 border text-white focus:ring-2 focus:ring-white focus:border-transparent ${errors.dateStart ? 'border-red-400' : 'border-white/20'}`}
+                                    className={`w-full max-w-full px-4 py-3 rounded-xl bg-white/10 border text-white focus:ring-2 focus:ring-white focus:border-transparent ${errors.dateStart ? 'border-red-400' : 'border-white/20'}`}
                                     disabled={isSubmitting}
                                 />
                             </div>
-                            <div>
+                            <div className="min-w-0">
                                 <label className="block text-sm text-white/80 mb-1">Date de fin (optionnel)</label>
                                 <input
                                     type="date"
                                     name="dateEnd"
                                     value={formData.dateEnd}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-white focus:border-transparent"
+                                    className="w-full max-w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-white focus:border-transparent"
                                     disabled={isSubmitting}
                                 />
                             </div>
