@@ -13,12 +13,16 @@ export function QuoteForm() {
         sound: false,
         lighting: false,
         video: false,
+        projector: false,
         dj: false,
         // Furniture
         tables: false,
         chairs: false,
         stage: false,
         standUp: false,
+        lectern: false,
+        cloakroom: false,
+        wifi: false,
         // Options
         security: false,
         cleaning: false,
@@ -229,17 +233,21 @@ export function QuoteForm() {
                                 { name: 'sound', label: 'Sonorisation' },
                                 { name: 'lighting', label: 'Éclairage' },
                                 { name: 'video', label: 'Vidéo / Projection' },
+                                { name: 'projector', label: 'Vidéoprojecteur' },
                                 { name: 'dj', label: 'Espace DJ' },
                             ]}
                         />
 
                         <CheckboxGroup
-                            title="Mobilier"
+                            title="Mobilier & Logistique"
                             items={[
                                 { name: 'tables', label: 'Tables' },
                                 { name: 'chairs', label: 'Chaises' },
                                 { name: 'stage', label: 'Scène / Estrade' },
                                 { name: 'standUp', label: 'Mange-debout' },
+                                { name: 'lectern', label: 'Pupitre' },
+                                { name: 'cloakroom', label: 'Vestiaire' },
+                                { name: 'wifi', label: 'Wifi' },
                             ]}
                         />
 
@@ -353,7 +361,7 @@ export function QuoteForm() {
                         ) : (
                             <>
                                 <Send size={20} />
-                                Louer un espace
+                                Réserver
                             </>
                         )}
                     </button>

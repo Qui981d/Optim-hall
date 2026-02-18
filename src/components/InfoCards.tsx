@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, MapPin, Download } from 'lucide-react';
+import { Clock, MapPin, Download, Plane, TrainFront } from 'lucide-react';
 
 export function InfoCards() {
     return (
@@ -35,9 +35,18 @@ export function InfoCards() {
                         </div>
                         <h4 className="text-lg font-bold text-optimhall-blue mb-2">Accès facilité</h4>
                         <ul className="space-y-2 text-sm text-optimhall-gray mb-4">
-                            <li>📍 Chemin de la Gravière 4, Acacias</li>
-                            <li>✈️ Aéroport : 20 min</li>
-                            <li>🚆 Gare Cornavin : 10 min</li>
+                            <li className="flex items-center gap-2">
+                                <MapPin size={14} className="text-optimhall-blue flex-shrink-0" />
+                                Chemin de la Gravière 4, Acacias
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <Plane size={14} className="text-optimhall-blue flex-shrink-0" />
+                                Aéroport : 20 min
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <TrainFront size={14} className="text-optimhall-blue flex-shrink-0" />
+                                Gare Cornavin : 10 min
+                            </li>
                         </ul>
                         <button
                             onClick={() => window.open('https://maps.google.com/?q=Chemin+de+la+Gravière+4,+1227+Acacias,+Geneva,+Switzerland', '_blank')}
