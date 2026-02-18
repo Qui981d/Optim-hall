@@ -59,7 +59,7 @@ export function Equipment() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-optimhall-blue mb-3">
-            Équipement
+            Équipements
           </h2>
           <p className="text-optimhall-gray text-lg">
             Tout est sur place, prêt à l'emploi

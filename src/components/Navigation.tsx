@@ -24,7 +24,7 @@ export function Navigation() {
   const navItems = [
     { id: 'espaces', label: 'Espaces' },
     { id: 'evenements', label: 'Événements' },
-    { id: 'equipements', label: 'Équipement' },
+    { id: 'equipements', label: 'Équipements' },
     { id: 'tarifs', label: 'Tarifs' },
     { id: 'demande', label: 'Contact' },
   ];
