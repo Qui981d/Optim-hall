@@ -29,16 +29,10 @@ export function Pricing() {
                 </div>
 
                 {/* Price ranges */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                <div className="mb-10">
                     <div className="bg-optimhall-blue rounded-2xl p-6 text-white text-center">
-                        <div className="text-sm text-white/70 mb-1">Mainhall (400m²)</div>
-                        <div className="text-2xl font-bold mb-1">Dès CHF 3'500</div>
-                        <div className="text-sm text-white/60">/ demi-journée</div>
-                    </div>
-                    <div className="bg-optimhall-dark rounded-2xl p-6 text-white text-center">
-                        <div className="text-sm text-white/70 mb-1">Studiohall (200m²)</div>
-                        <div className="text-2xl font-bold mb-1">Dès CHF 1'800</div>
-                        <div className="text-sm text-white/60">/ demi-journée</div>
+                        <div className="text-2xl font-bold mb-1">À partir de CHF 8'000</div>
+                        <div className="text-sm text-white/60">/ événement</div>
                     </div>
                 </div>
 

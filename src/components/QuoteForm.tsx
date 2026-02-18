@@ -361,7 +361,7 @@ export function QuoteForm() {
                         ) : (
                             <>
                                 <Send size={20} />
-                                Réserver
+                                Demander un devis
                             </>
                         )}
                     </button>

@@ -16,6 +16,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -30,6 +31,7 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -37,8 +39,6 @@
 
 /* Fix iOS Safari date input overflow */
 input[type="date"] {
-  -webkit-appearance: none;
-  appearance: none;
   max-width: 100%;
   box-sizing: border-box;
 }

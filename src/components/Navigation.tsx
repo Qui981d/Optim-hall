@@ -104,7 +104,7 @@ export function Navigation() {
             onClick={() => scrollToSection('demande')}
             className="w-full bg-optimhall-blue text-white py-3 rounded-2xl font-semibold text-base hover:bg-optimhall-dark transition-colors duration-300"
           >
-            Réserver
+            Demander un devis
           </button>
         </div>
       </div>
