@@ -36,3 +36,10 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Fix iOS Safari date input overflow */
+input[type="date"] {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}

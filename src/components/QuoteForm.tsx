@@ -119,8 +119,8 @@ export function QuoteForm() {
                             </select>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-hidden">
+                            <div className="min-w-0">
                                 <label className="block text-sm text-white/80 mb-1">Nombre de personnes *</label>
                                 <input
                                     type="number"
@@ -132,15 +132,14 @@ export function QuoteForm() {
                                     disabled={isSubmitting}
                                 />
                             </div>
-                            <div>
+                            <div className="min-w-0">
                                 <label className="block text-sm text-white/80 mb-1">Date souhaitée</label>
                                 <input
-                                    type="text"
+                                    type="date"
                                     name="eventDate"
                                     value={formData.eventDate}
                                     onChange={handleChange}
-                                    placeholder="Ex: 15/03/2026"
-                                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:ring-2 focus:ring-white focus:border-transparent"
+                                    className="w-full max-w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-white focus:border-transparent"
                                     disabled={isSubmitting}
                                 />
                             </div>
