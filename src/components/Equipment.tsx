@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, Speaker, Lightbulb, Monitor, Mic, Armchair, UtensilsCrossed } from 'lucide-react';
+import { ChevronDown, Zap, Lightbulb, Speaker, Theater, Projector, Mic2, Wifi, Shirt, Table, Armchair, Wine } from 'lucide-react';
 
 interface AccordionItemProps {
   title: string;
@@ -36,6 +36,17 @@ function AccordionItem({ title, icon, children, isOpen, onToggle }: AccordionIte
   );
 }
 
+const includedEquipment = [
+  { icon: <Projector size={22} />, label: "Vidéoprojecteur" },
+  { icon: <Theater size={22} />, label: "Scène / Estrade" },
+  { icon: <Mic2 size={22} />, label: "Pupitre" },
+  { icon: <Wifi size={22} />, label: "Wifi" },
+  { icon: <Shirt size={22} />, label: "Vestiaire" },
+  { icon: <Table size={22} />, label: "Tables" },
+  { icon: <Armchair size={22} />, label: "Chaises" },
+  { icon: <Wine size={22} />, label: "Mange-debouts" },
+];
+
 export function Equipment() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -56,21 +67,18 @@ export function Equipment() {
         </div>
 
         <div className="space-y-3">
-          {/* Son */}
+          {/* Puissance électrique */}
           <AccordionItem
-            title="Sonorisation"
-            icon={<Speaker size={20} />}
+            title="Puissance Électrique"
+            icon={<Zap size={20} />}
             isOpen={openIndex === 0}
             onToggle={() => toggle(0)}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 gap-2">
               {[
-                "Système line-array professionnel",
-                "Console de mixage numérique",
-                "Retours de scène",
-                "Microphones sans fil (HF)",
-                "Lecteur DJ / entrées auxiliaires",
-                "Ingénieur son disponible"
+                "2 x 32 A triphasé avec distribution",
+                "2 x 16 A triphasé avec distribution",
+                "Emplacement pour une génératrice si besoin"
               ].map((item, i) => (
                 <div key={i} className="flex items-center text-sm text-optimhall-gray">
                   <div className="w-1.5 h-1.5 bg-optimhall-blue rounded-full mr-2 flex-shrink-0" />
@@ -82,19 +90,16 @@ export function Equipment() {
 
           {/* Lumière */}
           <AccordionItem
-            title="Éclairage"
+            title="Lumière de la salle"
             icon={<Lightbulb size={20} />}
             isOpen={openIndex === 1}
             onToggle={() => toggle(1)}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 gap-2">
               {[
-                "Projecteurs LED RGBW",
-                "Lyres motorisées",
-                "Stroboscopes & lasers",
-                "Eclairage architectural",
-                "Machine à fumée / brouillard",
-                "Console lumière DMX"
+                "Entièrement équipée en éclairage LED piloté en DMX",
+                "Location clef en main",
+                "WallWasher sur mur en brique"
               ].map((item, i) => (
                 <div key={i} className="flex items-center text-sm text-optimhall-gray">
                   <div className="w-1.5 h-1.5 bg-optimhall-blue rounded-full mr-2 flex-shrink-0" />
@@ -104,20 +109,19 @@ export function Equipment() {
             </div>
           </AccordionItem>
 
-          {/* Vidéo */}
+          {/* Sonorisation */}
           <AccordionItem
-            title="Vidéo & Projection"
-            icon={<Monitor size={20} />}
+            title="Sonorisation de la salle"
+            icon={<Speaker size={20} />}
             isOpen={openIndex === 2}
             onToggle={() => toggle(2)}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 gap-2">
               {[
-                "Vidéoprojecteur HD",
-                "Écran de projection grand format",
-                "Écrans LED modulaires",
-                "Caméra live & streaming",
-                "Système de visioconférence"
+                "Diffusion du son par 10 enceintes de 300 W",
+                "Disposées dans toute la périphérie de l'espace",
+                "2 caissons de basses",
+                "Amplificateurs"
               ].map((item, i) => (
                 <div key={i} className="flex items-center text-sm text-optimhall-gray">
                   <div className="w-1.5 h-1.5 bg-optimhall-blue rounded-full mr-2 flex-shrink-0" />
@@ -127,21 +131,16 @@ export function Equipment() {
             </div>
           </AccordionItem>
 
-          {/* Mobilier */}
+          {/* Pendrillons */}
           <AccordionItem
-            title="Mobilier & Aménagement"
-            icon={<Armchair size={20} />}
+            title="Pendrillons"
+            icon={<Theater size={20} />}
             isOpen={openIndex === 3}
             onToggle={() => toggle(3)}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 gap-2">
               {[
-                "Tables rondes & rectangulaires",
-                "Chaises empilables",
-                "Mange-debout",
-                "Scène modulable",
-                "Podium / estrade",
-                "Catalogue mobilier sur demande"
+                "Possibilité de créer des séparations sur-mesure dans la salle"
               ].map((item, i) => (
                 <div key={i} className="flex items-center text-sm text-optimhall-gray">
                   <div className="w-1.5 h-1.5 bg-optimhall-blue rounded-full mr-2 flex-shrink-0" />
@@ -150,6 +149,24 @@ export function Equipment() {
               ))}
             </div>
           </AccordionItem>
+        </div>
+
+        {/* Équipements inclus - grid */}
+        <div className="mt-12">
+          <h3 className="text-lg font-bold text-optimhall-blue mb-6 text-center">Équipements inclus</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {includedEquipment.map((eq, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-2xl hover:bg-optimhall-blue/5 transition-colors duration-300"
+              >
+                <div className="w-12 h-12 bg-optimhall-blue/10 rounded-xl flex items-center justify-center text-optimhall-blue">
+                  {eq.icon}
+                </div>
+                <span className="text-sm font-medium text-optimhall-gray text-center">{eq.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -63,7 +63,7 @@ export function Navigation() {
                 onClick={() => scrollToSection('demande')}
                 className="bg-white text-optimhall-blue px-5 py-2 rounded-2xl font-semibold text-sm hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
               >
-                Dispo & Devis
+                Offre gratuite
               </button>
             </div>
 
@@ -104,7 +104,7 @@ export function Navigation() {
             onClick={() => scrollToSection('demande')}
             className="w-full bg-optimhall-blue text-white py-3 rounded-2xl font-semibold text-base hover:bg-optimhall-dark transition-colors duration-300"
           >
-            Vérifier la disponibilité
+            Louer un espace
           </button>
         </div>
       </div>

@@ -71,7 +71,7 @@ export function Pricing() {
                         onClick={scrollToQuote}
                         className="bg-optimhall-blue text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-optimhall-dark transition-all duration-300 transform hover:scale-105"
                     >
-                        Demander mon offre sur-mesure
+                        Obtenir mon devis en 24h
                     </button>
                 </div>
             </div>

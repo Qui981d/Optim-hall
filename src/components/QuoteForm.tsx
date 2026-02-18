@@ -5,6 +5,7 @@ export function QuoteForm() {
     const [formData, setFormData] = useState({
         // Event details
         eventType: '',
+        space: '',
         dateStart: '',
         dateEnd: '',
         participants: '',
@@ -123,7 +124,7 @@ export function QuoteForm() {
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
-                        Demander une offre
+                        Recevez votre offre personnalisée
                     </h2>
                     <p className="text-white/70 text-lg">
                         Sélectionnez vos besoins, on vous répond sous 24h
@@ -172,6 +173,24 @@ export function QuoteForm() {
                                     disabled={isSubmitting}
                                 />
                             </div>
+                        </div>
+
+                        <div>
+                            <label className="block text-sm text-white/80 mb-1">Espace souhaité</label>
+                            <select
+                                name="space"
+                                value={formData.space}
+                                onChange={handleChange}
+                                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-white focus:border-transparent"
+                                disabled={isSubmitting}
+                            >
+                                <option value="" className="text-gray-900">Sélectionnez un espace</option>
+                                <option value="mainhall" className="text-gray-900">Mainhall — 400m²</option>
+                                <option value="studiohall" className="text-gray-900">Studiohall — 200m²</option>
+                                <option value="loges" className="text-gray-900">Loges Artistes</option>
+                                <option value="traiteur" className="text-gray-900">Office & Traiteur</option>
+                                <option value="autre" className="text-gray-900">Autre / Je ne sais pas encore</option>
+                            </select>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -334,7 +353,7 @@ export function QuoteForm() {
                         ) : (
                             <>
                                 <Send size={20} />
-                                Envoyer ma demande
+                                Louer un espace
                             </>
                         )}
                     </button>
