@@ -7,8 +7,8 @@ export function Events() {
             image: "https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
         {
-            type: "Pop-up Store",
-            image: "https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg?auto=compress&cs=tinysrgb&w=600"
+            type: "Mariage",
+            image: "https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
         {
             type: "Salon",

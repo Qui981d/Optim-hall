@@ -41,7 +41,7 @@ export function SpacesSection() {
       area: "—",
       height: "",
       image: "https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Tables privées", "Canapés", "Service dédié"]
+      features: ["Tables privées", "Canapés", "Banquettes"]
     }
   ];
 
