@@ -31,7 +31,7 @@ export function Pricing() {
                 {/* Price ranges */}
                 <div className="mb-10">
                     <div className="bg-optimhall-blue rounded-2xl p-6 text-white text-center">
-                        <div className="text-2xl font-bold mb-1">À partir de CHF 8'000</div>
+                        <div className="text-2xl font-bold mb-1">À partir de CHF 6'900</div>
                         <div className="text-sm text-white/60">/ événement</div>
                     </div>
                 </div>

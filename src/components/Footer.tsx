@@ -23,13 +23,13 @@ export function Footer() {
 
           {/* Socials */}
           <div className="flex items-center gap-3">
-            <a href="#" className="w-9 h-9 bg-white/10 hover:bg-optimhall-blue rounded-xl flex items-center justify-center text-white transition-all duration-300">
+            <a href="https://www.instagram.com/optimhall_geneve/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 hover:bg-optimhall-blue rounded-xl flex items-center justify-center text-white transition-all duration-300">
               <Instagram size={18} />
             </a>
             <a href="#" className="w-9 h-9 bg-white/10 hover:bg-optimhall-blue rounded-xl flex items-center justify-center text-white transition-all duration-300">
               <Facebook size={18} />
             </a>
-            <a href="#" className="w-9 h-9 bg-white/10 hover:bg-optimhall-blue rounded-xl flex items-center justify-center text-white transition-all duration-300">
+            <a href="https://ch.linkedin.com/company/optimhall" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 hover:bg-optimhall-blue rounded-xl flex items-center justify-center text-white transition-all duration-300">
               <Linkedin size={18} />
             </a>
           </div>
